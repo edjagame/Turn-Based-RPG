@@ -1,0 +1,238 @@
+[gd_scene load_steps=31 format=3 uid="uid://cijk3h5spvfqh"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy_group.gd" id="1_lwls1"]
+[ext_resource type="PackedScene" uid="uid://wpssxu15hc1y" path="res://scenes/enemy/enemy.tscn" id="1_punoe"]
+[ext_resource type="Texture2D" uid="uid://cxskwqekuapsj" path="res://assets/firesprite.png" id="2_bmf0u"]
+[ext_resource type="Texture2D" uid="uid://ci8qctr5hxq7l" path="res://assets/watersprite.png" id="3_73bsh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_moma7"]
+atlas = ExtResource("3_73bsh")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcxmv"]
+atlas = ExtResource("3_73bsh")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wj4pi"]
+atlas = ExtResource("3_73bsh")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xekh"]
+atlas = ExtResource("3_73bsh")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfxkk"]
+atlas = ExtResource("3_73bsh")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rndg"]
+atlas = ExtResource("3_73bsh")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mvvs"]
+atlas = ExtResource("3_73bsh")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbhk6"]
+atlas = ExtResource("3_73bsh")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rp8tf"]
+atlas = ExtResource("3_73bsh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nm4ee"]
+atlas = ExtResource("3_73bsh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6oqd"]
+atlas = ExtResource("3_73bsh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlt3d"]
+atlas = ExtResource("3_73bsh")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0uwju"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_moma7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcxmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wj4pi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xekh")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfxkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rndg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mvvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbhk6")
+}],
+"loop": true,
+"name": &"heal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rp8tf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nm4ee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6oqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlt3d")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wn0tu"]
+atlas = ExtResource("2_bmf0u")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndhqc"]
+atlas = ExtResource("2_bmf0u")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgpf4"]
+atlas = ExtResource("2_bmf0u")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkdf0"]
+atlas = ExtResource("2_bmf0u")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lexis"]
+atlas = ExtResource("2_bmf0u")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acd1k"]
+atlas = ExtResource("2_bmf0u")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j7tk"]
+atlas = ExtResource("2_bmf0u")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ko4xf"]
+atlas = ExtResource("2_bmf0u")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjapx"]
+atlas = ExtResource("2_bmf0u")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_susjf"]
+atlas = ExtResource("2_bmf0u")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2wsl"]
+atlas = ExtResource("2_bmf0u")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qkbu"]
+atlas = ExtResource("2_bmf0u")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y6y0g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wn0tu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndhqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgpf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkdf0")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lexis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acd1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5j7tk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ko4xf")
+}],
+"loop": true,
+"name": &"heal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjapx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_susjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2wsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qkbu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="EnemyGroup" type="Node2D"]
+script = ExtResource("1_lwls1")
+
+[node name="WaterSprite" parent="." instance=ExtResource("1_punoe")]
+MAX_HEALTH = 100.0
+attack = 15
+defense = 10
+speed = 33
+unit_name = "Water Sprite"
+
+[node name="AnimatedSprite2D" parent="WaterSprite" index="0"]
+sprite_frames = SubResource("SpriteFrames_0uwju")
+frame_progress = 0.0
+
+[node name="FireSprite" parent="." instance=ExtResource("1_punoe")]
+MAX_HEALTH = 100.0
+attack = 40
+defense = 5
+speed = 34
+unit_name = "Fire Sprite"
+
+[node name="AnimatedSprite2D" parent="FireSprite" index="0"]
+sprite_frames = SubResource("SpriteFrames_y6y0g")
+frame_progress = 0.0
+
+[editable path="WaterSprite"]
+[editable path="FireSprite"]

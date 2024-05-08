@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfsy2dkx71c6v"]
+
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_a6ovv"]
+[ext_resource type="Texture2D" uid="uid://cf2fidxv0283y" path="res://assets/BG.jpg" id="1_v1jhg"]
+[ext_resource type="PackedScene" uid="uid://cijk3h5spvfqh" path="res://scenes/enemy/enemy_group.tscn" id="2_7en58"]
+[ext_resource type="PackedScene" uid="uid://bbvhe3j222lw4" path="res://scenes/player/player_group.tscn" id="3_d6uay"]
+[ext_resource type="Texture2D" uid="uid://bbldhow8d00sc" path="res://assets/focusarrow.png" id="4_aaydl"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_a6ovv")
+
+[node name="BG" type="TextureRect" parent="."]
+offset_right = 3066.0
+offset_bottom = 1866.0
+scale = Vector2(0.376225, 0.348186)
+texture = ExtResource("1_v1jhg")
+
+[node name="EnemyGroup" parent="." instance=ExtResource("2_7en58")]
+
+[node name="PlayerGroup" parent="." instance=ExtResource("3_d6uay")]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -515.0
+offset_top = -168.0
+offset_right = 515.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI/HBoxContainer"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="GUI/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HandlerText" type="RichTextLabel" parent="GUI/HBoxContainer/MarginContainer/MarginContainer"]
+layout_mode = 2
+text = "This is sample text!
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Move1" type="Button" parent="GUI/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "Move1"
+
+[node name="focus" type="Sprite2D" parent="GUI/HBoxContainer/VBoxContainer/Move1"]
+visible = false
+position = Vector2(174, 15)
+rotation = -2.3562
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("4_aaydl")
+
+[node name="Move2" type="Button" parent="GUI/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "Move2"
+
+[node name="focus" type="Sprite2D" parent="GUI/HBoxContainer/VBoxContainer/Move2"]
+visible = false
+position = Vector2(174, 15)
+rotation = -2.3562
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("4_aaydl")
+
+[node name="Move3" type="Button" parent="GUI/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "Move3"
+
+[node name="focus" type="Sprite2D" parent="GUI/HBoxContainer/VBoxContainer/Move3"]
+visible = false
+position = Vector2(174, 15)
+rotation = -2.3562
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("4_aaydl")
+
+[connection signal="pressed" from="GUI/HBoxContainer/VBoxContainer/Move1" to="." method="_on_move_1_pressed"]
+[connection signal="pressed" from="GUI/HBoxContainer/VBoxContainer/Move2" to="." method="_on_move_2_pressed"]
+[connection signal="pressed" from="GUI/HBoxContainer/VBoxContainer/Move3" to="." method="_on_move_3_pressed"]
